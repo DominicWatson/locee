@@ -1,14 +1,17 @@
 {
-  "name": "lucky-for-lucee",
+  "name": "locee",
   "version": "0.1.0",
-  "description": "",
+  "description": "Locee (pronounced \"Low-key\") is a neat GUI application for managing local Lucee web applications.",
   "keywords": [
     "lucee",
     "node-webkit"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominicwatson/locee"
+  },
   "author": {
     "name": "Dominic Watson",
-    "email": "",
     "url": "http://domwatson.codes"
   },
   "dependencies": {

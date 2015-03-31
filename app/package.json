@@ -1,7 +1,7 @@
 {
-  "name": "boxer",
+  "name": "locee",
   "version": "0.1.0",
-  "description": "Is a neat GUI application for managing local web applications to be run using CommandBox",
+  "description": "Locee (pronounced \"Low-key\") is a neat GUI application for managing local Lucee web applications.",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,8 +11,8 @@
     "toolbar": false,
     "width": 800,
     "height": 500,
-    "title":"Boxer 0.1.0",
-    "icon":"./img/boxer-icon.png"
+    "title":"Locee 0.1.0",
+    "icon":"./img/lucee-icon.png"
   },
   "license": "",
   "dependencies": {

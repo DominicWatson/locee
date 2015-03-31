@@ -1,14 +1,14 @@
-window.boxer = ( function( gui ) {
+window.locee = ( function( gui ) {
     'use strict';
 
-    var Boxer = function (){};
+    var Locee = function (){};
 
-    Boxer.prototype.load = function(){
+    Locee.prototype.load = function(){
 
     };
 
-    return new Boxer;
+    return new Locee;
 
 })();
 
-boxer.load();
+locee.load();

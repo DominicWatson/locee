@@ -1,5 +1,5 @@
-# Lucky
+# Locee
 
-Lucky is a neat GUI application for managing local Lucee web applications.
+Locee (pronounced "Low-key") is a neat GUI application for managing local Lucee web applications.
 
 It is pre-alpha, nothing to see here... yet.
