@@ -16,7 +16,6 @@ window.settings = ( function( $ ){
 		} );
 	};
 
-
 	ApplicationSettings.prototype.getSetting = function( settingName ){
 		return JSON.parse( localStorage.getItem( settingName ) || '""' );
 	};
