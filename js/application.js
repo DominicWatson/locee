@@ -10,3 +10,5 @@ window.boxer = ( function( gui ) {
     return new Boxer;
 
 })();
+
+boxer.load();
