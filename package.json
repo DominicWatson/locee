@@ -1,0 +1,19 @@
+{
+  "name": "lucky-for-lucee",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [
+    "lucee",
+    "node-webkit"
+  ],
+  "author": {
+    "name": "Dominic Watson",
+    "email": "",
+    "url": "http://domwatson.codes"
+  },
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-node-webkit-builder": "^1.0.0"
+  }
+}
