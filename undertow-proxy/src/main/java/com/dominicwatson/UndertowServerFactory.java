@@ -5,11 +5,10 @@ import io.undertow.Undertow.Builder;
 import io.undertow.server.*;
 import io.undertow.util.Headers;
 
-public class UndertowProxy {
-    public static void main( final String[] args ) {
-        Undertow server = buildServer();
+public class UndertowServerFactory {
 
-        server.start();
+    public static Undertow newServer() {
+        return buildServer();
     }
 
     private static Undertow buildServer() {

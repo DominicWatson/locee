@@ -4,17 +4,17 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-public class UndertowProxyTest extends TestCase {
+public class UndertowServerFactoryTest extends TestCase {
 
-    public UndertowProxyTest( String testName ) {
+    public UndertowServerFactoryTest( String testName ) {
         super( testName );
     }
 
     public static Test suite() {
-        return new TestSuite( UndertowProxyTest.class );
+        return new TestSuite( UndertowServerFactoryTest.class );
     }
 
-    public void testUndertowProxy() {
+    public void testUndertowServerFactory() {
         assertTrue( true );
     }
 
