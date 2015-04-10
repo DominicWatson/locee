@@ -11,10 +11,11 @@
     "toolbar": false,
     "width": 800,
     "height": 500,
-    "title":"Locee 0.1.0",
-    "icon":"./img/lucee-icon.png"
+    "title": "Locee 0.1.0",
+    "icon": "./img/lucee-icon.png"
   },
   "license": "",
   "dependencies": {
+    "java": "^0.4.6"
   }
 }
