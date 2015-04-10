@@ -1,14 +1,25 @@
-window.locee = ( function( gui ) {
+window.locee = ( function( sf, $ ) {
     'use strict';
 
-    var Locee = function (){};
+    var server            = sf.newServer()
+      , $serverControlBtn = $( '#server-control' );
 
-    Locee.prototype.load = function(){
+	$serverControlBtn.data( "running", false );
 
-    };
+	$serverControlBtn.on( "click", function(){
+		if ( $serverControlBtn.data( "running" ) ) {
+			server.stop();
+			$serverControlBtn.removeClass( "btn-danger" );
+			$serverControlBtn.addClass( "btn-success" );
+			$serverControlBtn.html( "Start server" );
+			$serverControlBtn.data( "running", false )
+		} else {
+			server.start();
+			$serverControlBtn.removeClass( "btn-success" );
+			$serverControlBtn.addClass( "btn-danger" );
+			$serverControlBtn.html( "Stop server" );
+			$serverControlBtn.data( "running", true )
+		}
+	} );
 
-    return new Locee;
-
-})();
-
-locee.load();
+})( window.serverFactory, jQuery );

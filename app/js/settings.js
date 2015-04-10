@@ -37,4 +37,5 @@ window.settings = ( function( $ ){
 	};
 
 	return new ApplicationSettings();
+
 } )( jQuery );
