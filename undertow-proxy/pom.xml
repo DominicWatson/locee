@@ -25,6 +25,12 @@
 			<artifactId>undertow-servlet</artifactId>
 			<version>1.0.1.Final</version>
 		</dependency>
+
+		<dependency>
+		    <groupId>io.undertow</groupId>
+		    <artifactId>undertow-jsp</artifactId>
+		    <version>1.0.0.Beta27</version>
+		</dependency>
 	</dependencies>
 
 	<build>
