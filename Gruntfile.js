@@ -4,11 +4,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-node-webkit-builder');
 	grunt.loadNpmTasks('grunt-exec');
 
-	grunt.registerTask( 'default', [ 'exec:install_jar', 'nodewebkit' ] );
+	grunt.registerTask( 'default', [ 'exec:install_jar', 'exec:nwgyp', 'nodewebkit' ] );
 	grunt.registerTask( 'jars', [ 'exec:install_jar' ] );
 	grunt.registerTask( 'linux', [ 'nodewebkit:linux' ] );
 	grunt.registerTask( 'win', [ 'nodewebkit:win' ] );
 	grunt.registerTask( 'osx', [ 'nodewebkit:osx' ] );
+	grunt.registerTask( 'nwgyp', [ 'exec:nwgyp' ] );
 
 	grunt.initConfig( {
 		nodewebkit: {
@@ -20,8 +21,14 @@ module.exports = function (grunt) {
 		exec : {
 			install_jar : {
 				command : 'mvn package',
-				stdout  : true,
 				cwd     : './undertowServerFactory/',
+				stdout  : true,
+				stderr  : true
+			},
+			nwgyp : {
+				command : 'nw-gyp configure --target=0.11.6 && nw-gyp build',
+				cwd     : './app/node_modules/java',
+				stdout  : true,
 				stderr  : true
 			}
 		}
