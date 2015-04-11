@@ -60,6 +60,23 @@
 					</descriptorRefs>
 				</configuration>
 			</plugin>
+
+			<plugin>
+	            <artifactId>maven-antrun-plugin</artifactId>
+	            <configuration>
+	                <tasks>
+	                    <copy file="target/locee-undertow-server-factory-1.0-SNAPSHOT-jar-with-dependencies.jar" tofile="../app/lib/locee-undertow-server-factory.jar" />
+	                </tasks>
+	            </configuration>
+	            <executions>
+	                <execution>
+	                    <phase>package</phase>
+	                    <goals>
+	                        <goal>run</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+	        </plugin>
 		</plugins>
 	</build>
 </project>
