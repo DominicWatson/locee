@@ -1,4 +1,4 @@
-package com.dominicwatson;
+package org.locee;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -23,7 +23,7 @@ import io.undertow.server.handlers.resource.FileResourceManager;
 import static io.undertow.servlet.Servlets.defaultContainer;
 import static io.undertow.servlet.Servlets.deployment;
 
-public class UndertowServerFactory {
+public class LoceeUndertowServerFactory {
 
     public static Undertow newServer( int port, String libDirs, String webroot, String webXmlPath, String webInfPath ) throws ServletException, IOException {
         Builder        builder     = getServerBuilder();

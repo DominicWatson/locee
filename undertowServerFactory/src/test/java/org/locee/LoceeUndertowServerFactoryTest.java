@@ -1,17 +1,17 @@
-package com.dominicwatson;
+package org.locee;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-public class UndertowServerFactoryTest extends TestCase {
+public class LoceeUndertowServerFactoryTest extends TestCase {
 
-    public UndertowServerFactoryTest( String testName ) {
+    public LoceeUndertowServerFactoryTest( String testName ) {
         super( testName );
     }
 
     public static Test suite() {
-        return new TestSuite( UndertowServerFactoryTest.class );
+        return new TestSuite( LoceeUndertowServerFactoryTest.class );
     }
 
     public void testUndertowServerFactory() {
