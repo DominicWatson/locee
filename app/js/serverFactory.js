@@ -1,12 +1,20 @@
 window.serverFactory = ( function( java ){
     "use strict";
 
-    java.classpath.push( "./lib/undertow-proxy-1.0-SNAPSHOT-jar-with-dependencies.jar" );
+    var ServerFactory = function (){
+    	java.classpath.push( "./lib/locee-undertow-server-factory-1.0-SNAPSHOT-jar-with-dependencies.jar" );
+    };
 
-    var ServerFactory = function (){};
-
-    ServerFactory.prototype.newServer = function(){
-        return java.callStaticMethodSync( "com.dominicwatson.UndertowServerFactory", "newServer" );
+    ServerFactory.prototype.newServer = function( port, libDirList, webroot, webXmlPath, webInfDir ){
+        return java.callStaticMethodSync(
+              "org.locee.LoceeUndertowServerFactory"
+            , "newServer"
+            , port
+            , libDirList
+            , webroot
+            , webXmlPath
+            , webInfDir
+        );
     };
 
     return new ServerFactory;
