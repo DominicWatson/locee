@@ -67,9 +67,6 @@ public class LoceeUndertowServerFactory {
         List<URL> jarList  = getJarListFromLibDirectories( libDirs );
         int       jarCount = jarList.size();
 
-        System.err.println("Jars found: " + jarCount );
-        System.err.println("Lib dirs: " + libDirs );
-
         return new URLClassLoader( jarList.toArray( new URL[ jarCount ] ) );
     }
 
@@ -86,7 +83,6 @@ public class LoceeUndertowServerFactory {
                 if ( !file.isDirectory() ) {
                     String fileName = file.getAbsolutePath().toLowerCase();
                     if ( fileName.endsWith( ".jar" ) || fileName.endsWith( ".zip" ) ) {
-                    System.err.println( fileName );
                         jarList.add( file.toURI().toURL() );
                     }
                 }
