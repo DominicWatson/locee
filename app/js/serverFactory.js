@@ -6,10 +6,10 @@ window.serverFactory = ( function( java ){
     };
 
     ServerFactory.prototype.newServer = function( port, libDirList, webroot, webXmlPath, webInfDir ){
-        return java.callStaticMethodSync(
-              "org.locee.LoceeUndertowServerFactory"
-            , "newServer"
+        return java.newInstanceSync(
+              "org.locee.LoceeUndertowServer"
             , port
+            , "localhost"
             , libDirList
             , webroot
             , webXmlPath

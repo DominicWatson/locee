@@ -9,34 +9,16 @@ import java.net.URL;
 import java.util.List;
 import java.util.ArrayList;
 
-import io.undertow.Undertow;
-import io.undertow.Undertow.Builder;
-import io.undertow.Handlers;
 import io.undertow.servlet.handlers.DefaultServlet;
 import io.undertow.server.*;
 import io.undertow.util.Headers;
 import io.undertow.servlet.api.DeploymentInfo;
-import io.undertow.servlet.api.DeploymentManager;
 import io.undertow.servlet.api.ServletInfo;
-import io.undertow.server.handlers.PathHandler;
 import io.undertow.server.handlers.resource.FileResourceManager;
-import static io.undertow.servlet.Servlets.defaultContainer;
 import static io.undertow.servlet.Servlets.deployment;
 
-public class LoceeUndertowServerFactory {
-
-    public static Undertow newServer( int port, String libDirs, String webroot, String webXmlPath, String webInfPath ) throws ServletException, IOException {
-        Builder        builder     = getServerBuilder();
-        DeploymentInfo servletInfo = buildServletInfo( libDirs, webroot, webXmlPath, webInfPath );
-        PathHandler    pathHandler = createPathHandlerFromServletInfo( servletInfo );
-
-        builder.addHttpListener( port, "localhost" );
-        builder.setHandler( pathHandler );
-
-        return builder.build();
-    }
-
-    private static DeploymentInfo buildServletInfo( String libDirs, String webroot, String webXmlPath, String webInfPath ) throws IOException {
+public class LoceeServletBuilder {
+    public static DeploymentInfo build( String libDirs, String webroot, String webXmlPath, String webInfPath ) throws IOException {
         DeploymentInfo servletInfo = deployment();
         URLClassLoader classLoader = buildClassLoader( libDirs );
 
@@ -49,18 +31,6 @@ public class LoceeUndertowServerFactory {
         WebXmlToUndertowDeploymentReader.readWebXml( new File( webXmlPath ), servletInfo );
 
         return servletInfo;
-    }
-
-    private static PathHandler createPathHandlerFromServletInfo( DeploymentInfo servletInfo ) throws ServletException {
-        DeploymentManager manager = defaultContainer().addDeployment( servletInfo );
-
-        manager.deploy();
-
-        return Handlers.path( Handlers.redirect( "/" ) ).addPrefixPath( "/", manager.start() );
-    }
-
-    private static Builder getServerBuilder() {
-        return Undertow.builder();
     }
 
     private static URLClassLoader buildClassLoader( String libDirs ) throws IOException {
