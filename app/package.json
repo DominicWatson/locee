@@ -9,8 +9,8 @@
   "author": "Dominic Watson",
   "window": {
     "toolbar": false,
-    "width": 800,
-    "height": 500,
+    "width": 1400,
+    "height": 900,
     "title": "Locee 0.1.0",
     "icon": "./img/lucee-icon.png"
   },
